@@ -1,0 +1,44 @@
+Ext.onReady(function(){
+	Ext.create('Ext.panel.Panel',{
+		title:'Table布局示例',
+		frame:true,
+		width:300,
+		height:200,
+		bodyStyle:'background-color:#FFFF00',
+		renderTo:'form',
+		defaults:{
+			frame:true,
+			width:50,
+			height:80,
+			bodyStyle:'background-color:#F00F0F'
+		},
+		layout:{
+			type:'table',
+			columns:4
+		},
+		items:[
+			{
+				title:'布局一',
+				html:'内容一',
+				colspan:3,
+				width:150
+			},{
+				title:'布局二',
+				html:'内容二',
+				rowspan:2,
+				height:160
+			},{
+				title:'布局三',
+				html:'内容三'
+			},{
+				title:'布局四',
+				html:'内容四'
+			},{
+				title:'布局五',
+				html:'内容五'
+			}
+		]
+		
+	})
+	
+})

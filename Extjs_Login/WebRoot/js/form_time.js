@@ -1,0 +1,28 @@
+Ext.onReady(function(){
+	Ext.QuickTips.init();
+	Ext.create('Ext.form.Panel',{
+		title:'Time控件',
+		renderTo:'form',
+		bodyStyle:'padding:5,5,5,5',
+		frame:true,
+		height:100,
+		width:300,
+		items:[{
+			fieldLabel:'时间选择框',
+			xtype:'timefield',
+			width:220,
+			labelSeparator:':',
+			msgTarget:'side',
+			autoFitErrors:false,
+			maxValue:'18:00',
+			minValue:'8:00',
+			maxText:'时间应小于{0}',
+			minText:'时间应大于{0}',
+			pickerMaxHeight:80,
+			increment:60,
+			format:'G:i:s',
+			invalidText:'时间格式无效'
+		}]
+	});
+	
+});

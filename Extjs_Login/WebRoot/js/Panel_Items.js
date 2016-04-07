@@ -1,0 +1,31 @@
+Ext.onReady(function(){
+	Ext.create('Ext.panel.Panel',{
+		title:'使用Items进行嵌套',
+		frame:true,
+		bodyStyle:'background-color:#FFFF00',
+		bodyPadding:5,
+		renderTo:'form',
+		height:200,
+		width:300,
+		layout:'vbox',
+		autoScroll:true,
+		collapsible:true,
+		defaults:{
+			width:280
+		},
+		items:[
+			{//items默认的类型是Panel,因此在这里不用设置xtype
+				title:'嵌套模板1',
+				height:80,
+				contentEl:'contentEl_ID'
+			},{
+				title:'嵌套模板2',
+				autoLoad:'html/page1.html'
+			},{
+				xtype:'datepicker',
+				minDate:new Date()
+			}
+		]
+	})
+	
+})

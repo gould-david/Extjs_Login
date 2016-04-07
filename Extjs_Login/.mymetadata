@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Extjs_Login"
+  id="myeclipse.1451921442541"
+  context-root="/Extjs_Login"
+  j2ee-spec="6.0"
+  archive="Extjs_Login.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

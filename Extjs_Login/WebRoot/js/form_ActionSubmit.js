@@ -1,0 +1,57 @@
+Ext.onReady(function(){
+	Ext.QuickTips.init();
+	var loginForm = Ext.create('Ext.form.Panel',{
+		title:'登录窗口',
+		width:400,
+		bodyPadding:5,
+		frame:true,
+		renderTo:'form',
+		fieldDefaults:{
+			labelWidth:70,
+			width:270,
+			labelSeparator:':',
+			msgTarget:'side',
+			autoFitErrors:false//不自动调整字段宽度
+		},
+		defaultType:'textfield',
+		items:[
+			{
+				fieldLabel:'用户名',
+				name:'username',
+				allowBlank:true,
+				vtype:'email'
+			},{
+				fieldLabel:'密码',
+				name:'password',
+				allowBlank:true,
+				inputType:'password'
+			}
+		],
+		buttons:[
+			{
+				text:'登陆',
+				handler:login
+			},{
+				text:'重置',
+				handler:function(){
+					loginForm.form.reset();
+				}
+			}
+			
+		]
+	});
+	function login(){
+		//完成异步提交
+		loginForm.getForm().submit({
+			clientVaildation:true,//是否进行客户端验证
+			url:'Test/form_ActionSubmitController.action',
+			method:'POST',
+			success:function(form,action){
+				Ext.Msg.alert('提示','系统已成功登录')
+			},
+			failure:function(form,action){
+				Ext.Msg.alert('提示','错误原因:'+action.result.errorMessage);
+			}
+		});
+	}
+})

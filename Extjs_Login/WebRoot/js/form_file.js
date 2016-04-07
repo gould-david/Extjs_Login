@@ -1,0 +1,44 @@
+Ext.onReady(function(){
+	Ext.QuickTips.init();
+	var uploadForm = Ext.create('Ext.form.Panel',{
+		title:'ext.form.file示例',
+		frame:true,
+		bodyStyle:'padding:5,5,5,5',
+		height:100,
+		width:600,
+		renderTo:'form',
+		defaults:{
+			labelSeparator:':',
+			labelWidth:70,
+			width:260,
+			allowBlank:false,
+			labelAlign:'left',
+			msgTarget:'side'
+		},
+		items:[
+			{
+				xtype:'filefield',
+				name:'photo',
+				fieldLabel:'照片',
+				buttonText:'选择照片'
+			}
+		],
+		buttons:[
+			{
+				text:'上传文件',
+				handler:function(){
+					var form = uploadForm.getForm();
+					if(form.isValid()){//进行表单的验证，如果不符合要求将无法完成提交
+						form.submit({
+							url:'Test/uploadFile.action',
+							waitMsg:'上传过程中',
+							success:function(flag,o){
+								Ext.Msg.alert('提示',o.result.file+'已经成功上传');
+							}
+						});
+					}
+				}
+			}
+		]
+	})
+})

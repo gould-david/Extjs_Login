@@ -1,0 +1,41 @@
+Ext.onReady(function(){
+	Ext.QuickTips.init();
+	Ext.create('Ext.form.Panel',{
+		title:'Vtype示例',
+		width:300,
+		//height:100,
+		renderTo:'form',
+		bodyPadding:5,
+		frame:true,
+		defaultType:'textfield',
+		fieldDefaults:{
+			labelSeparator:':',
+			labelWidth:80,
+			width:250,
+			msgTarget:'side'
+		},
+		items:[
+			{
+				fieldLabel:'电子邮件',
+				vtype:'email'//针对电子邮件进行表单验证
+			},
+			{
+				fieldLabel:'网站',
+				vtype:'url'
+			},{
+				fieldLabel:'字母',
+				vtype:'alpha'
+			},{
+				fieldLabel:'字母和数字',
+				vtype:'alphanum'
+			}/*,
+				下面代码不起作用
+			{
+				fieldLabel:'数字',
+				vtype:'num'
+			}*/
+		]
+		
+	});
+	
+})

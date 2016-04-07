@@ -1,0 +1,24 @@
+Ext.onReady(function(){
+	Ext.create('Ext.tab.Panel',{
+		//通过items添加标签标签页示例
+		title:'Ext.tab.Panel示例',
+		frame:true,
+		height:300,
+		width:500,
+		activeTab:0,
+		renderTo:Ext.getBody(),
+		items:[
+			{
+				title:'发文管理',
+				html:'发文部门'
+			},{
+				title:'收文管理',
+				html:'收文部门'
+			},{
+				title:'出差管理',
+				html:'出差日期'
+			}
+		]
+	})
+	
+})

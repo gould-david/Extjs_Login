@@ -1,0 +1,24 @@
+Ext.onReady(function(){
+	Ext.create('Ext.panel.Panel',{
+		title:'Ext.layout.container.Fit示例',
+		frame:true,
+		width:800,
+		height:400,
+		renderTo:Ext.getBody(),
+		bodyStyle:'background-color:#FFFF00',
+		bodyPadding:5,
+		collapsible:true,
+		autoScroll:true,
+		layout:'fit',
+		items:[
+			{
+				title:'面板1',
+				html:'面板一'
+			},{
+				title:'面板2',
+				html:'面板二'
+			}
+		]
+	})
+	
+})

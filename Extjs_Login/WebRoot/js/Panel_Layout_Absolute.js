@@ -1,0 +1,32 @@
+Ext.onReady(function(){
+	Ext.create('Ext.panel.Panel',{
+		title:'Absolute绝对位置布局示例',
+		width:500,
+		height:200,
+		frame:true,
+		renderTo:'form',
+		bodyStyle:'background-color:#0A0FFF',
+		layout:'absolute',
+		defaults:{
+			frame:true,
+			width:100,
+			height:80,
+			bodyStyle:'background-color:#F0F00F'
+		},
+		items:[
+			{
+				x:10,//距离父容器左边缘10
+				y:10,//距离父容器上边缘10
+				title:'子面板一',
+				html:'子面板一'
+			},{
+				x:180,//距离父容器左边缘180
+				y:50,//距离父容器上边缘50
+				title:'子面板二',
+				html:'子面板二'
+			}
+		]
+			
+	})
+	
+})

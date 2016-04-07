@@ -1,0 +1,36 @@
+Ext.onReady(function(){
+	//增加悬浮提示
+	Ext.QuickTips.init();
+	//建立表单
+	var form = new Ext.form.Panel({
+		title:'表单',
+		height:120,
+		width:250,
+		//是否进行界面的优化（渲染）
+		frame:true,
+		renderTo:'form',
+		defaults:{
+			labelSeparator:':',
+			labelWidth:30,
+			width:200,
+			allowBlank:false,
+			blankText:'不允许为空',
+			labelAlign:'left',
+			msgTarget:'qtip'
+			//msgTarget:'msg',
+			//msgTarget:'title'
+			//msgTarget:'under'	
+			//msgTarget:'side'	
+			//msgTarget:'none'	
+		},
+		items:[
+			{xtype:'textfield',
+			fieldLabel:'姓名'	
+			},
+			{xtype:'numberfield',
+			fieldLabel:'年龄'
+			}
+		]
+		
+	});
+})

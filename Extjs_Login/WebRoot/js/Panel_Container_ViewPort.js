@@ -1,0 +1,30 @@
+Ext.onReady(function(){
+	Ext.create('Ext.container.Viewport',{
+		//一个页面中仅能有一个ViewPort，其自动渲染至document body中，且没有滚动条的支持
+		//一般常用此方法将主面板充满整个浏览器的显示空间
+		layout:'border',
+		defaults:{
+			collapsible:true
+		},
+		items:[
+			{
+				title:'北',
+				height:300,
+				region:'north'
+			},{
+				title:'中',
+				width:600,
+				region:'center'
+			},{
+				title:'西',
+				width:200,
+				region:'west'
+			},{
+				title:'南',
+				height:200,
+				region:'south'
+			}
+		]
+	})
+	
+})

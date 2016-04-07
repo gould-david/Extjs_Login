@@ -1,0 +1,50 @@
+Ext.onReady(function(){
+	Ext.QuickTips.init();
+	var loginForm = new Ext.form.Panel({
+		title:'Text示例',
+		bodyStyle:'padding:5,5,5,5',
+		frame:true,
+		height:300,
+		width:400,
+		renderTo:'form',
+		defaults:{
+			laberSeparator:':',
+			labelWidth:50,
+			width:150,
+			allowBlank:false,
+			labelAlign:'left',
+			msgTarget:'side'
+		},
+		items:[
+			{
+				xtype:'textfield',
+				fieldLabel:'用户名',
+				disableKeyFilter:true,
+				
+				name:'username',
+				selectOnFocus:true,//选中后直接全选所有文字
+				//grow:true,//根据字段的长度自动延长文本框的长度
+				//growMin:100,最小延长长度
+				//growMax:250,最大延长长度
+				//利用正则表达式验证文本格式
+				regex:/^([\w]+)(.[\w]+)*@([\w-]+\.){1,5}([A-Za-z]){2,4}$/,
+				regexText:'格式错误'
+			},
+			{
+				xtype:'textfield',
+				fieldLabel:'密码',
+				name:'password',
+				inputType:'password'
+			}
+		],
+		buttons:[
+			{
+				text:'登陆',
+				handler:function(){
+					loginForm.form.setValues({username:'user@com',password:'1'});
+				}
+			}
+		]
+	});	
+	
+});
